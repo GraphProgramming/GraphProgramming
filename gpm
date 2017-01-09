@@ -26,6 +26,8 @@ fi
 
 if [ $1 = "install" ]; then
     git clone git@github.com:GraphProgramming/$2.git
+    cd $2
+    ./install.sh
     exit
 fi
 
