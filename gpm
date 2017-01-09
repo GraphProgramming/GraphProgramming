@@ -15,6 +15,7 @@ if [ $# -eq 0 ]
     echo "  update          # update gpm"
     echo "  upgrade         # update all installed packages"
     echo "  upgradepkg PKG  # update only the package provided"
+    echo "  status          # show the status of all packages"
     exit
 fi
 
@@ -43,6 +44,24 @@ if [ $1 = "upgrade" ]; then
         cd $dir
 	echo "Upgrading: $dir"
         git pull
+	echo ""
+        cd ..
+    done
+    exit
+fi
+
+if [ $1 = "status" ]; then
+    echo "Status: GraphProgramming (meta-package)"
+    git status
+    echo ""
+    for dir in /$SCRIPTPATH/*/
+    do
+	dir=${dir%*/}
+	dir=${dir##*/}
+        cd $dir
+	echo "Status: $dir"
+        git status
+	echo ""
         cd ..
     done
     exit
