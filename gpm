@@ -1,0 +1,50 @@
+#!/bin/bash
+
+pushd `dirname $0` > /dev/null
+SCRIPTPATH=`pwd`
+popd > /dev/null
+
+cd $SCRIPTPATH
+
+if [ $# -eq 0 ]
+  then
+    echo "Usage: gpm COMMAND"
+    echo ""
+    echo "Availible COMMANDs:"
+    echo "  install PKG     # install a package"
+    echo "  update          # update gpm"
+    echo "  upgrade         # update all installed packages"
+    echo "  upgradepkg PKG  # update only the package provided"
+    exit
+fi
+
+if [ $1 = "update" ]; then
+    git pull
+    exit
+fi
+
+if [ $1 = "install" ]; then
+    git clone git@github.com:GraphProgramming/$2.git
+    exit
+fi
+
+if [ $1 = "upgradepkg" ]; then
+    cd $2
+    git pull
+    cd ..
+    exit
+fi
+
+if [ $1 = "upgrade" ]; then
+    for dir in /$SCRIPTPATH/*/
+    do
+	dir=${dir%*/}
+	dir=${dir##*/}
+        cd $dir
+	echo "Upgrading: $dir"
+        git pull
+        cd ..
+    done
+    exit
+fi
+
