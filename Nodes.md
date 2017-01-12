@@ -130,7 +130,7 @@ If you write optimized algorithms in a language specific extlib that can be expr
 ### stdlib.string.tostr
  ```json
  "name": "toString",
- "inputs": {"val": "String"},
+ "inputs": {"val": "Object"},
  "outputs": {"result": "String"},
  "desc": "Converts to string."
  ```
