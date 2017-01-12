@@ -12,6 +12,7 @@ if [ $# -eq 0 ]
     echo ""
     echo "Availible COMMANDs:"
     echo "  install PKG     # install a package"
+    echo "  install-deps PKG # install the dependencies of a package"
     echo "  update          # update gpm"
     echo "  upgrade         # update all installed packages"
     echo "  upgradepkg PKG  # update only the package provided"
@@ -31,6 +32,12 @@ if [ $1 = "install" ]; then
     exit
 fi
 
+if [ $1 = "install-deps" ]; then
+    cd $2
+    ./install-deps.sh
+    exit
+fi
+
 if [ $1 = "upgradepkg" ]; then
     cd $2
     git pull
@@ -43,6 +50,9 @@ if [ $1 = "upgrade" ]; then
     do
 	dir=${dir%*/}
 	dir=${dir##*/}
+	if [ $dir = "images" ]; then
+		continue
+	fi
         cd $dir
 	echo "Upgrading: $dir"
         git pull
@@ -60,6 +70,9 @@ if [ $1 = "status" ]; then
     do
 	dir=${dir%*/}
 	dir=${dir##*/}
+	if [ $dir = "images" ]; then
+		continue
+	fi
         cd $dir
 	echo "Status: $dir"
         git status
