@@ -117,7 +117,7 @@
 ### stdlib.string.tostr
  ```json
  "name": "toString",
- "inputs": {"val": "String"},
+ "inputs": {"val": "Object"},
  "outputs": {"result": "String"},
  "desc": "Converts to string."
  ```
