@@ -39,18 +39,18 @@
  * String Const
  * toString
  
- ## system
+## system
  
  * Print
  
  
- # Node (specific) Specification by Package
+# Node (specific) Specification by Package
  
- ## default
+## default
 
- ## structures
+## structures
  
- ### stdlib.structures.if
+### stdlib.structures.if
  ```json
  "name": "If",
  "inputs": {"val": "Object", "condition": "Boolean"},
@@ -58,9 +58,9 @@
  "desc": "Pass val based on condition."
  ```
  
- ## boolean
+## boolean
  
- ### stdlib.boolean.const
+### stdlib.boolean.const
  ```json
  "name": "Const",
  "outputs": {"result": "Boolean"},
@@ -68,9 +68,9 @@
  "desc": "Return a const boolean."
  ```
  
- ## linearalgebra
+## linearalgebra
  
- ### stdlib.linearalgebra.vector
+### stdlib.linearalgebra.vector
  ```json
  "name": "Vector",
  "outputs": {"result": "Vector"},
@@ -78,9 +78,9 @@
  "desc": "A simple vector."
  ```
  
- ## number
+## number
  
- ### stdlib.number.const
+### stdlib.number.const
  ```json
  "name": "Const",
  "outputs": {"result": "Number"},
@@ -88,7 +88,7 @@
  "desc": "A constant number."
  ```
  
- ### stdlib.number.mult
+### stdlib.number.mult
  ```json
  "name": "Mult",
  "inputs": {"a": "Number", "b": "Number"},
@@ -96,9 +96,9 @@
  "desc": "a * b."
  ```
  
- ## string
+## string
  
- ### stdlib.string.const
+### stdlib.string.const
  ```json
  "name": "String Const",
  "outputs": {"result": "String"},
@@ -106,7 +106,7 @@
  "desc": "Returns the arg on the output."
  ```
  
- ### stdlib.string.concat
+### stdlib.string.concat
  ```json
  "name": "String Concat",
  "inputs": {"left": "String", "right": "String"},
@@ -114,7 +114,7 @@
  "desc": "Concat left and right."
  ```
  
- ### stdlib.string.tostr
+### stdlib.string.tostr
  ```json
  "name": "toString",
  "inputs": {"val": "String"},
@@ -122,10 +122,10 @@
  "desc": "Converts to string."
  ```
  
- ## system
+## system
  
- ### stdlib.system.print
-```json
+### stdlib.system.print
+ ```json
  "name": "Print",
  "inputs": {"val": "Object"},
  "desc": "Prints on the screen."
