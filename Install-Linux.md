@@ -10,7 +10,7 @@ sudo apt-get install git
 Now clone the repository.
 ```bash
 cd /path/to/where/you/want/gp/installed
-git clone 
+git clone https://github.com/GraphProgramming/GraphProgramming.git
 ```
 
 Now you can use gpm in the commandline.
@@ -67,7 +67,7 @@ You only need git. Whereas you know github you might already have it installed. 
 Now clone the repository.
 ```bash
 cd /path/to/where/you/want/gp/installed
-git clone 
+git clone https://github.com/GraphProgramming/GraphProgramming.git
 ```
 
 Now you can use gpm in the commandline.
