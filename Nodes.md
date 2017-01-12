@@ -50,11 +50,51 @@
 
  ## structures
  
+ ### stdlib.structures.if
+ ```json
+ "name": "If",
+ "inputs": {"val": "Object", "condition": "Boolean"},
+ "outputs": {"true": "Object", "false": "Object"},
+ "desc": "Pass val based on condition."
+ ```
+ 
  ## boolean
+ 
+ ### stdlib.boolean.const
+ ```json
+ "name": "Const",
+ "outputs": {"result": "Boolean"},
+ "args": {"value": true},
+ "desc": "Return a const boolean."
+ ```
  
  ## linearalgebra
  
+ ### stdlib.linearalgebra.vector
+ ```json
+ "name": "Vector",
+ "outputs": {"result": "Vector"},
+ "args": {"value": [1, 0, 0]}
+ "desc": "A simple vector."
+ ```
+ 
  ## number
+ 
+ ### stdlib.number.const
+ ```json
+ "name": "Const",
+ "outputs": {"result": "Number"},
+ "args": {"value": 0},
+ "desc": "A constant number."
+ ```
+ 
+ ### stdlib.number.mult
+ ```json
+ "name": "Mult",
+ "inputs": {"a": "Number", "b": "Number"},
+ "outputs": {"result": "Number"},
+ "desc": "a * b."
+ ```
  
  ## string
  
@@ -83,3 +123,10 @@
  ```
  
  ## system
+ 
+ ### stdlib.system.print
+```json
+ "name": "Print",
+ "inputs": {"val": "Object"},
+ "desc": "Prints on the screen."
+ ```
