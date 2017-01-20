@@ -37,9 +37,14 @@ If you write optimized algorithms in a language specific extlib that can be expr
 
 * Const
 
+## debug
+
+* View
+
 ## linearalgebra
 
 * Vector
+* Vector Trigger
 
 ## number
 
@@ -81,6 +86,17 @@ If you write optimized algorithms in a language specific extlib that can be expr
  "desc": "Return a const boolean."
  ```
  
+## debug
+
+### stdlib.debug.view
+ ```json
+ "name": "View",
+ "inputs": {"val": "Object"},
+ "outputs": {"result": "Object"},
+ "args": {"width": 0, "height": 0},
+ "desc": "Views and passes the object."
+ ```
+
 ## linearalgebra
  
 ### stdlib.linearalgebra.vector
@@ -91,6 +107,14 @@ If you write optimized algorithms in a language specific extlib that can be expr
  "desc": "A simple vector."
  ```
  
+### stdlib.linearalgebra.vectortrigger
+ ```json
+ "name": "Vector Trigger",
+ "outputs": {"result": "Vector"},
+ "args": {"value": [1, 0, 0], "time": 1.0}
+ "desc": "A simple vector."
+ ```
+
 ## number
  
 ### stdlib.number.const
