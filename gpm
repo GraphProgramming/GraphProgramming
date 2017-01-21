@@ -17,6 +17,7 @@ if [ $# -eq 0 ]
     echo "  upgrade         # update all installed packages"
     echo "  upgradepkg PKG  # update only the package provided"
     echo "  status          # show the status of all packages"
+    echo "  module PKG command # execute command in folder of module"
     exit
 fi
 
@@ -35,6 +36,13 @@ fi
 if [ $1 = "install-deps" ]; then
     cd $2
     ./install-deps.sh
+    exit
+fi
+
+if [ $1 = "module" ]; then
+    cd $2
+    echo ${@:3}
+    ${@:3}
     exit
 fi
 
