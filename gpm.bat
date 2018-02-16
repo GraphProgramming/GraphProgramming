@@ -3,6 +3,7 @@
 if "%1"=="" goto blank
 if "%1"=="update" goto update
 if "%1"=="install" goto install
+if "%1"=="install-deps" goto installdeps
 if "%1"=="upgradepkg" goto upgradepkg
 if "%1"=="upgrade" goto upgrade
 if "%1"=="status" goto status
@@ -11,11 +12,12 @@ if "%1"=="status" goto status
     echo Usage: gpm.bat COMMAND
     echo(
     echo Availible COMMANDs:
-    echo   install PKG     # install a package
-    echo   update          # update gpm
-    echo   upgrade         # update all installed packages
-    echo   upgradepkg PKG  # update only the package provided
-    echo   status          # show the status of all packages
+    echo   install PKG        # install a package
+    echo   install-deps PKG   # install the dependencies of a package
+    echo   update             # update gpm
+    echo   upgrade            # update all installed packages
+    echo   upgradepkg PKG     # update only the package provided
+    echo   status             # show the status of all packages
 goto done
 
 :update
@@ -26,6 +28,13 @@ goto done
     git clone git@github.com:GraphProgramming/%2.git
     cd %2
     install.bat
+    cd ..
+goto done
+
+:installdeps
+    cd %2
+    install-deps.bat
+    cd ..
 goto done
 
 :upgradepkg
