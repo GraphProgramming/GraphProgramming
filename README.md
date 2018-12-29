@@ -30,17 +30,17 @@ python -m gpm --list
 
 ## Two important packages
 
-### GPWebUI
+### Web IDE
 
-GPWebUI is a Web-IDE for Graph Programming.
+`ide` is a Web-IDE for Graph Programming.
 ```bash
 cd  /path/to/workspace
-python -m gpm.GPWebUI
+python -m gpm.ide
 ```
 
 ### pyGP
 
-pyGP is a kernel to run graphs in python.
+`pyGP` is a kernel to run graphs in python.
 ```bash
 cd  /path/to/workspace
 python -m gpm.pyGP HelloWorld.graph.json
