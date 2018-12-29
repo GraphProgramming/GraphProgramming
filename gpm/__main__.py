@@ -5,7 +5,7 @@ import shutil
 
 
 GPM_HOME = os.path.dirname(os.path.realpath(__file__))
-PACKAGES = ["GPWebUI", "pyGP", "pyGP-computervision", "pyGP-slam", "pyGP-ros", "luaGP", "juliaGP", "jGP"]
+PACKAGES = ["ide", "pyGP", "pyGP-computervision", "pyGP-slam", "pyGP-ros", "luaGP", "juliaGP", "jGP"]
 
 
 def get_path(file, context=None):
