@@ -6,7 +6,7 @@ NODES = {}
     name="Example Str Concat",
     inputs=dict(inp="String"),
     outputs=dict(outp="String"))
-def init(global_state, text: str = "Hello World") -> Callable:
+def init(node, global_state, text: str = "Hello World") -> Callable:
     """
     Limit the FPS throughput.
     """
