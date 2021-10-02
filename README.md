@@ -10,22 +10,22 @@ pip install gpm
 
 You can install packages like the pyGP package.
 ```bash
-python -m gpm --install pyGP
+gpm --install pyGP
 ```
 
 Upgrade packages.
 ```bash
-python -m gpm --upgrade pyGP
+gpm --upgrade pyGP
 ```
 
 Remove packages.
 ```bash
-python -m gpm --uninstall pyGP
+gpm --uninstall pyGP
 ```
 
 And list all availible official packages.
 ```bash
-python -m gpm --list
+gpm --list
 ```
 
 ## Two important packages
@@ -35,7 +35,7 @@ python -m gpm --list
 `ide` is a Web-IDE for Graph Programming.
 ```bash
 cd  /path/to/workspace
-python -m gpm.ide
+gpm ide
 ```
 
 ### pyGP
@@ -43,7 +43,7 @@ python -m gpm.ide
 `pyGP` is a kernel to run graphs in python.
 ```bash
 cd  /path/to/workspace
-python -m gpm.pyGP HelloWorld.graph.json
+gpm pyGP HelloWorld.graph.json
 ```
 
 ## Install on Ubuntu (or systems with apt-get)
@@ -60,7 +60,7 @@ Now install gpm (ideally in a venv)
 
 Now you can use gpm in the commandline.
 ```bash
-(venv)> python -m gpm --help
+(venv)> gpm --help
 ```
 
 ## Install Graph Programming on Windows
@@ -85,7 +85,9 @@ Follow the install instructions on screen. Hint: Check the box that allows usage
 
 #### Create a virtualenv
 
-TODO
+```bash
+conda create -n venv python=3.8
+```
 
 ### Setting up Graph Programming
 
@@ -102,5 +104,5 @@ Now clone the repository.
 
 Now you can use gpm in the commandline.
 ```batch
-(venv)> python -m gpm --help
+(venv)> gpm --help
 ```

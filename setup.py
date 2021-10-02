@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 from codecs import open
 from os import path
 
-__version__ = '1.0.0'
+__version__ = '2.0.0'
 
 here = path.abspath(path.dirname(__file__))
 
@@ -31,10 +31,18 @@ setup(
       'Programming Language :: Python',
     ],
     keywords='',
-    packages=find_packages(exclude=[]),
+    packages=find_packages(exclude=["docs", "tests"]),
     include_package_data=True,
     author='Michael Fuerst',
     install_requires=install_requires,
     dependency_links=dependency_links,
-    author_email='mail@michaelfuerst.de'
+    author_email='mail@michaelfuerst.de',
+    entry_points={
+        'console_scripts': [
+            'gpm = gpm.__main__:main',
+        ]
+    },
+    extras_require={
+        'dev': ['nose2', 'packaging'],
+    },
 )

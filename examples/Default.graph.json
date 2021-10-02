@@ -1,0 +1,50 @@
+{
+	"connections": [
+		{
+			"input": {
+				"node": "NQyHr",
+				"output": "result"
+			},
+			"output": {
+				"node": "k3FUj",
+				"input": "val"
+			}
+		}
+	],
+	"nodes": [
+		{
+			"args": {
+				"value": "Hello World!"
+			},
+			"code": "stdlib.string.const:String Const",
+			"desc": "Return a const string.",
+			"inputs": {},
+			"name": "NQyHr",
+			"outputs": {
+				"result": "Boolean"
+			},
+			"displayname": "String Const",
+			"heat": 0,
+			"running": 0,
+			"x": -30,
+			"y": -170
+		},
+		{
+			"args": {
+				"value": "Hello World!"
+			},
+			"code": "stdlib.system.print:Print",
+			"desc": "Print on the screen.",
+			"inputs": {
+				"val": "Object"
+			},
+			"name": "k3FUj",
+			"outputs": {},
+			"displayname": "Print",
+			"heat": 0,
+			"running": 0,
+			"x": -26,
+			"y": 5
+		}
+	]
+}

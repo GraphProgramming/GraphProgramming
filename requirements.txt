@@ -1,2 +1,5 @@
 service_identity
 autobahn[twisted]
+pyOpenSSL
+entangle-python
+GPUtil

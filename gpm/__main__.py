@@ -2,6 +2,7 @@ import sys
 import argparse
 import os
 import shutil
+from importlib import import_module
 
 
 GPM_HOME = os.path.dirname(os.path.realpath(__file__))
@@ -24,17 +25,18 @@ def get_path(file, context=None):
 def parse_args():
     parser = argparse.ArgumentParser(description='Graph Programming Manager')
 
-    parser.add_argument("--install", help="Install a package")
-    parser.add_argument("--url", help="Url used for cloning (on install)")
-    parser.add_argument("--upgrade", help="Upgrade a package")
-    parser.add_argument("--uninstall", help="Completely uninstall a package removing all data")
-    parser.add_argument("--list", help="Print a list of all availible packages")
+    parser.add_argument("--install", required=False, type=str, help="Install a package")
+    parser.add_argument("--url", required=False, type=str, help="Url used for cloning (on install)")
+    parser.add_argument("--upgrade", required=False, type=str, help="Upgrade a package")
+    parser.add_argument("--uninstall", required=False, type=str, help="Completely uninstall a package removing all data")
+    parser.add_argument("--list", required=False, action="store_true", help="Print a list of all availible packages")
+    parser.add_argument("extension", nargs='?', type=str, help="Run an extension")
 
-    args = parser.parse_args()
+    args, unknown_args = parser.parse_known_args()
 
-    if args.install is None and args.upgrade is None and args.uninstall is None and args.list is None:
+    if args.install is None and args.upgrade is None and args.uninstall is None and args.list is None and args.extension is None:
         parser.print_help()
-    return args
+    return args, unknown_args
 
 
 def get_package_path(package):
@@ -78,15 +80,19 @@ def list_packages():
     print("\n".join(PACKAGES))
 
 def main():
-    args = parse_args()
+    args, unknown_args = parse_args()
     if args.install is not None:
         install(args.install, url=args.url)
     if args.upgrade is not None:
         upgrade(args.upgrade)
     if args.uninstall is not None:
         uninstall(args.uninstall)
-    if args.list is not None:
+    if args.list:
         list_packages()
+    if args.extension:
+        sys.argv[0] = "gpm {}".format(args.extension)
+        mod = import_module("gpm.{}.__main__".format(args.extension))
+        mod.main(unknown_args)
 
 if __name__ == "__main__":
     main()
